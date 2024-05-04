@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.active{
+  background-color: antiquewhite;
+}
+
+.expanded {
+  display: block;
+  background-color: beige;
+}
+#headerItem{
+  padding: 1rem;
+}
+.accordian_content{
+  display: flex;
+align-items: center;
+justify-content: center;
+  height: 6rem;
+  background-color: beige;
+}

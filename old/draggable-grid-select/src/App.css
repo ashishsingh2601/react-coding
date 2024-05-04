@@ -1,0 +1,61 @@
+.super__container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__header{
+  text-align: center;
+  margin: 1.5rem 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+}
+.grid__type--name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 10), 3rem);
+  grid-template-rows: repeat(var(--rows, 10), 3rem);
+  user-select: none;
+  gap: 3px;
+  
+}
+
+.box{
+  border: 2px solid #101212;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(70, 69, 69)
+}
+
+.selected{
+  background-color:  rgb(6, 167, 6);
+  color: #fff;
+}
+
+.booked{
+  background-color: orangered;
+  color: #fff;
+}

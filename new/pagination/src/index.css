@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;  
+  padding: 1rem;
+}
+.item{
+  border: 1px solid #101212;
+  padding: 1rem;  
+  border-radius: 15px;
+}
+.pagination__container{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 15px;
+  left: 30%;
+}
+.pagination__container span  {
+  padding: 0.1rem;
+}
+.pagination__container span button {
+  padding: 1rem;
+  border-radius: 9px;
+  border: none;
+}
+.pagination__container span button:hover{
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+.active{
+  background-color: rgb(181, 130, 95);
+  color: #fff;
+  
+}
