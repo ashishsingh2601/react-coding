@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.stuct__item{
+  border: 1px solid #101212;
+  padding: 1rem;
+  width: 300px;
+  user-select: none;
+}
+.isFolder{
+  cursor: pointer;
+}

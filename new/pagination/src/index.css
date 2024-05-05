@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.container{
+/* .container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;  
@@ -31,10 +31,22 @@
 }
 .pagination__container span button:hover{
   background-color: antiquewhite;
-  cursor: pointer;
-}
+  cursor: pointer; */
+/* } */
 .active{
   background-color: rgb(181, 130, 95);
   color: #fff;
   
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;  
+}
+
+.item{
+  padding: 3rem;
+  border: 1px solid #101212;
+  margin: 0 1.5rem; 
 }

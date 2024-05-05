@@ -1,0 +1,29 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.image {
+  display: inline-block;
+  height: 180px;
+  width: 300px;
+  object-fit: cover;
+  gap: 1rem;  
+}
+
+.active{
+  display: block;
+}
+.inactive{
+  display: none;
+}
+.image-slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 300px;
+}
+.btn{
+  height: 3rem;
+}
