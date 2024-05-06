@@ -7,6 +7,7 @@ const Card = ({
   company,
   isError,
   isSubmissionError,
+  handleRemove,
 }) => {
   const handleInputChange = (index, e) => {
     const { name, value } = e.target;
@@ -24,7 +25,7 @@ const Card = ({
           name="company"
           onChange={(e) => handleInputChange(index, e)}
         />
-        {isError && (
+        {isError && company.trim() === "" && (
           <small style={{ color: "red" }}>Company can't be empty</small>
         )}
         {isSubmissionError && company.trim() === "" && (
@@ -40,12 +41,16 @@ const Card = ({
           name="job_title"
           onChange={(e) => handleInputChange(index, e)}
         />
+        {isError && jobTitle.trim() === "" && (
+          <small style={{ color: "red" }}>Job Title can't be empty</small>
+        )}
         {isSubmissionError && jobTitle.trim() === "" && (
           <small style={{ color: "red" }}>
             Empty Job Title can't be submitted
           </small>
         )}
       </div>
+      <button onClick={() => handleRemove(index)}>Remove</button>
     </main>
   );
 };

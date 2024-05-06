@@ -9,6 +9,7 @@ const DynamicForm = () => {
     },
   ]);
   const [errors, setErrors] = useState([]);
+  const [submissionErrors, setSubmissionErrors] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (index, e) => {
@@ -55,12 +56,29 @@ const DynamicForm = () => {
 
   };
 
-  console.log("->", errors)
+
+  console.log("e", submissionErrors)
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(!errors.length){
+
+    inputFields.forEach((item, index) => {
+      if(item.name.trim() === "" || item.age.trim() === ""){
+        setSubmissionErrors[index] = {index, errMsg: "Fields can't be empty"}
+      }
+    })
+
+    inputFields.forEach((item, index) => {
+      let newSubmissionErrors = [...submissionErrors];
+      if(item.name.trim() !== "" || item.age.trim() !== ""){
+        delete newSubmissionErrors[index];
+        setSubmissionErrors(newSubmissionErrors);
+      }
+    })
+
+
+    if(!errors.length && !submissionErrors.length){
         console.log(inputFields);
         setSubmitted(true);
     }else{
@@ -87,6 +105,9 @@ const DynamicForm = () => {
               {errors[index] && errors[index]?.errorFieldType === "name" && (
                 <p style={{ color: "red" }}>{errors[index].errorMsg}</p>
               )}
+              {submissionErrors[index] && (
+                <p style={{ color: "red" }}>{submissionErrors[index].errMsg}</p>
+              )}
               <input
                 type="text"
                 name="age"
@@ -97,6 +118,9 @@ const DynamicForm = () => {
               {errors[index] && errors[index]?.errorFieldType === "age" && (
                 <p style={{ color: "red" }}>{errors[index].errorMsg}</p>
               ) }
+              {submissionErrors[index] && (
+                <p style={{ color: "red" }}>{submissionErrors[index].errMsg}</p>
+              )}
               <button onClick={(e) => handleRemoveField(index, e)}>
                 Remove
               </button>
