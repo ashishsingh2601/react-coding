@@ -32,12 +32,13 @@ const Dashboard = () => {
 
         const newData = await response.json();
         
-        const {height, weight, base_experience} = newData
+        const {height, weight, base_experience, name} = newData
+
         setSelectedData(newData);
         localStorage.setItem(
           value,
           JSON.stringify({
-            height, weight, base_experience
+            height, weight, base_experience, name
           })
         );
       } catch (err) {
@@ -70,6 +71,9 @@ const Dashboard = () => {
           <table className="table">
             <tr>
               <th>
+                <strong>Name</strong>
+              </th>
+              <th>
                 <strong>Height</strong>
               </th>
               <th>
@@ -81,6 +85,9 @@ const Dashboard = () => {
             </tr>
             <tbody>
               <tr>
+              <td>
+                  <p>{selectedData.name}</p>
+                </td>
                 <td>
                   <p>{selectedData.height}</p>
                 </td>
