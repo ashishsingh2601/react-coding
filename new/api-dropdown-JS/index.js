@@ -31,17 +31,15 @@ function makeOptions(options = []) {
 }
 
 
-let pokename = "";
 select.addEventListener("change", (e) => {
   const { value } = e.target;
 
-  pokename = value;
   let cachedPokemon = localStorage.getItem(value);
 
   cachedPokemon = JSON.parse(cachedPokemon);
   if (cachedPokemon) {
-    let { height, weight, base_experience, pokename } = cachedPokemon;
-    buildPokemonTable(height, weight, base_experience, pokename);
+    let { height, weight, base_experience, name } = cachedPokemon;
+    buildPokemonTable(height, weight, base_experience, name);
     return;
   } else {
     async function fetchPokeDetail(url) {
@@ -53,18 +51,20 @@ select.addEventListener("change", (e) => {
 
         const data = await response.json();
 
-        const { height, weight, base_experience } = data;
+        console.log("cdnskv", data)
+
+        const { height, weight, base_experience, name } = data;
         localStorage.setItem(
           value,
           JSON.stringify({
             height,
             weight,
             base_experience,
-            pokename,
+            name,
           })
         );
 
-        buildPokemonTable(height, weight, base_experience, pokename);
+        buildPokemonTable(height, weight, base_experience, name);
       } catch (err) {
         console.log(err);
       }
@@ -100,10 +100,10 @@ function initialTableStructure() {
 }
 
 
-function buildPokemonTable(height, weight, base_experience, pokename){
+function buildPokemonTable(height, weight, base_experience, name){
     initialTableStructure();
 
-    console.log(height, weight, base_experience, pokename);
+    console.log(height, weight, base_experience, name);
 
     const bodyrow = document.createElement("tr");
     const bodyName = document.createElement("td");
@@ -112,7 +112,7 @@ function buildPokemonTable(height, weight, base_experience, pokename){
     const bodyexp = document.createElement("td");
 
  
-    bodyName.innerText = pokename;
+    bodyName.innerText = name;
     bodyrow.appendChild(bodyName);
 
     bodyheight.innerText = height;
