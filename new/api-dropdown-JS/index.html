@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="style" href="./styles.css" onload="this.rel='stylesheet'">
+    <title>API Dropdown</title>
+</head>
+<body>
+    <main class="container">
+        <label for="selector" id="selector_label">Select:</label>
+        <select id="selector" aria-labelledby="selector_label">
+            <option value="" hidden class="option">Select an option</option>
+        </select>
+
+        <table cellspacing="3" class="table"></table>
+    </main>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
