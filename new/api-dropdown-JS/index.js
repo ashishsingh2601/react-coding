@@ -25,7 +25,7 @@ function makeOptions(options = []) {
   options?.results?.forEach((option) => {
     let optionElement = document.createElement("option");
     optionElement.innerText = option.name;
-    optionElement.setAttribute("value", option.name);
+    optionElement.setAttribute("value", option.url);
     select.appendChild(optionElement);
   });
 }
@@ -42,9 +42,9 @@ select.addEventListener("change", (e) => {
     buildPokemonTable(height, weight, base_experience, name);
     return;
   } else {
-    async function fetchPokeDetail(url) {
+    async function fetchPokeDetail() {
       try {
-        const response = await fetch(`${url}/${value}`);
+        const response = await fetch(`${value}`);
         if (!response.ok) {
           throw new Error("Something went wrong while fetching details");
         }
@@ -70,7 +70,7 @@ select.addEventListener("change", (e) => {
       }
     }
 
-    fetchPokeDetail(apiUrl);
+    fetchPokeDetail();
   }
 });
 
