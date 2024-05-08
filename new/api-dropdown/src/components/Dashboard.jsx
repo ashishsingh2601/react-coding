@@ -25,7 +25,7 @@ const Dashboard = () => {
       setSelectedData(JSON.parse(cachedData));
     } else {
       try {
-        const response = await fetch(`${apiUrl}/${value}`);
+        const response = await fetch(`${value}`);
         if (!response.ok) {
           throw new Error("Error while fetching");
         }
@@ -60,7 +60,7 @@ const Dashboard = () => {
         </option>
         {data.results?.map((item, index) => {
           return (
-            <option value={item.name} key={index + 1}>
+            <option value={item.url} key={index + 1}>
               {item.name}
             </option>
           );
