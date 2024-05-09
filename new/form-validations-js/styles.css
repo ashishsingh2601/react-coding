@@ -1,0 +1,11 @@
+.hasError{
+    color: red;
+    display: block;
+}
+.form{
+    width: 50%;
+    margin:  auto;
+}
+.input-control{
+    padding: 1rem;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Submission</title>
+</head>
+<body>
+    <h2>HTML Form</h2>
+    <form action="server.js" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required minlength="2" maxlength="50"><br> <!-- Required field with minimum and maximum length -->
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br> <!-- Required email field -->
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required minlength="10" maxlength="500"></textarea><br><br> <!-- Required field with minimum and maximum length -->
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <title>Form Validations</title>
+</head>
+<body>
+    <mainc class="main__container">
+        <form onsubmit="return validateForm()" class="form" novalidate>
+            <fieldset>
+             
+                <legend>Personal Info</legend>
+                <div id="form-fields">
+                <div class="input-control">
+                    <label for="name" id="name__label">Name</label>
+                    <input type="text" aria-labelledby="name_label" name="name" id="name" />
+                    <small class="error"></small>
+                </div>
+
+                <div class="input-control">
+                
+                    <label for="email" id="email__label">E-mail</label>
+                    <input type="email" aria-labelledby="email_label" name="email" id="email" />
+                    <small class="error"></small>
+
+                </div>
+
+                <div class="input-control">
+
+                    <label for="age" id="age__label">Age</label>
+                    <input type="text" aria-labelledby="age_label" name="age" id="age" />
+                    <small class="error"></small>
+
+                </div>
+
+            </div>
+
+            </fieldset>
+            <button type="submit" style="cursor: pointer;">Submit</button>
+            
+        </form>
+        <button onclick="handleAddFields()" style="cursor: pointer;" id="add-btn">Add Fields</button>
+        <button onclick="handleRemoveFields()" style="cursor: pointer;" id="remove-btn">Remove Fields</button>
+
+
+        <script src="index.js" type="module"></script>
+    </main>
+</body>
+</html>
